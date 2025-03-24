@@ -58,11 +58,19 @@ console.log(typeOfEmail(mail3));
 // checkEmailValidity("n.eekenanovi.nl") geeft false - want geen @
 // checkEmailValidity("n.eeken@novinl.") geeft false - want de punt mag niet als laatst
 // checkEmailValidity("tessmellink@novi,nl") geeft false - want er staat een komma in
-function checkEmailValidity(eMail){
-    if (eMail.includes("@")){
-        if (eMail.includes("," && ".")){
-            r
-        }
+
+function checkEmailValidity(eMail) {
+    if (!eMail.endsWith(".") && eMail.includes("@") && !eMail.includes(",")){
+        return true + ": het mail adres is mogelijk"
+    }
+    else{
+        return false + ": het mail adres is niet mogelijk"
     }
 }
-console.log(checkEmailValidity("douwe-wiegersmahotmal,nl"));
+console.log(checkEmailValidity("n.eeken@novi.nl"));
+console.log(checkEmailValidity("tessmellink@novi.nl"));
+console.log(checkEmailValidity("n.eekenavoi.nl"));
+console.log(checkEmailValidity("n.eeken@novinl."));
+console.log(checkEmailValidity("tessmellink@novi,nl"));
+
+
